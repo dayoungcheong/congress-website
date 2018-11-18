@@ -1,0 +1,132 @@
+.Homepage {
+    background: rgb(99, 159, 255);
+    color: white;
+}
+header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+}
+
+.header-text, h2, h3 {
+    text-shadow: 2px 2px 2px black;
+    text-align:center;
+}
+
+.header-banner {
+    background: url(capitol.jpg) center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gradient-header {
+    background: linear-gradient(to bottom, rgb(253, 59, 59), rgb(99, 159, 255));
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+img:not(.nav-logo):not(.footer-logo) {
+    box-shadow: 15px 15px 20px black;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: flex;
+    }
+    
+    .column {
+        flex: 50%;
+        padding: 5px;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .list-item {
+        padding: 1rem;
+    }
+
+
+}
+
+.redirect-top-link {
+    display:block;
+    padding: 1rem;
+    text-align:center;
+    color: rgb(0, 4, 223);
+}
+
+.footer-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: rgb(253, 59, 59);
+    border-top: .2rem solid white;
+}
+
+.D {
+    color: blue;
+}
+
+.R {
+    color: red;
+}
+
+.O {
+    color: white;
+}
+
+.text-center, #congressperson {
+    text-align: center;
+    list-style-type: none;
+}
+
+
+.centerimg {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    position: relative;
+  } 
+
+  #map {
+    height: 70vh;
+    width: 100%;
+  }
+
+  #home-button {
+    left: 10px;
+    top: 10px;
+  }
+
+  #buttons {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  } 
+
+  button {
+    border: 1px solid;
+    box-shadow: 5px 10px #888888;
+  }
