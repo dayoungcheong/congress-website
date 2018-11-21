@@ -93,11 +93,7 @@ img:not(.nav-logo):not(.footer-logo) {
 
 
 
-.card-item {
-    color: black;
-}
-
-/*.D {
+.D {
     color: blue;
 }
 
@@ -139,13 +135,11 @@ img:not(.nav-logo):not(.footer-logo) {
     left: 10px;
     top: 10px;
   }
-
   #buttons {
     position: absolute;
     left: 10px;
     top: 10px;
   } 
-
   button {
     border: 1px solid;
     box-shadow: 5px 10px #888888;
