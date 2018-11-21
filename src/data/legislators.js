@@ -85,4 +85,4 @@ fetch("https://theunitedstates.io/congress-legislators/legislators-current.json"
 //     renderError(error);
 // });
 
-export { legislators };
+export { stateFullName, legislators };

@@ -1,63 +1,5 @@
-// import React, { Component } from 'react';
-// import mapboxgl from 'mapbox-gl'
-
-// mapboxgl.accessToken = 'pk.eyJ1IjoiZGF5b3VuZ2NoZW9uZyIsImEiOiJjam81dGJ5YjUwMHlzM3FxNWY1ZzZ1c2N1In0.I9E1kpz0Kdi4qCiS5yJ4zA';
-
-// class Map extends Component {
-
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       lng: -96,
-//       lat: 40,
-//       zoom: 3.5
-//     };
-//   }
-
-//   componentDidMount() {
-//     const { lng, lat, zoom } = this.state;
-
-//     const map = new mapboxgl.Map({
-//       container: this.mapContainer,
-//       style: 'mapbox://styles/mapbox/streets-v9',
-//       center: [lng, lat],
-//       zoom
-//     });
-
-
-
-
-//     map.on('move', () => {
-//       const { lng, lat } = map.getCenter();
-
-//       this.setState({
-//         lng: lng.toFixed(4),
-//         lat: lat.toFixed(4),
-//         zoom: map.getZoom().toFixed(2)
-//       });
-//     });
-//   }
-
-//   render() {
-//     const { lng, lat, zoom } = this.state;
-
-//     return (
-//       <div id="map">
-//         <div >
-//           <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
-//         </div>
-//         <div ref={el => this.mapContainer = el}  />
-//       </div>
-//     );
-//   }
-// }
-
-
-// export default Map;
-
-
-
-import { legislators } from "./data/legislators"
+import { stateFullName, legislators } from "./data/legislators"
+import { stateCenters } from "./data/stateCenters"
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl'
 
@@ -181,7 +123,34 @@ class Map extends Component {
           'circle-stroke-color': '#000000',
           'circle-stroke-width': 2
         }
-      });
+      }); 
+
+      map.on('click', (e) => {
+  let features = map.queryRenderedFeatures(e.point);
+  let arrOfStates = Object.values(stateFullName);
+  let currState = "";
+  if (arrOfStates.indexOf(features[0].properties.name) > -1) {
+      currState = features[0].properties.name;
+
+      map.flyTo({
+          center: stateCenters[currState],
+          zoom: 5
+      })
+
+  } else if (features[0].layer.id == "legislators") {
+    map.flyTo({
+      center: [features[0].geometry.coordinates[0], features[0].geometry.coordinates[1]],
+      zoom: 7
+  });
+
+} else {
+    map.flyTo({
+      center: {lon: -96, lat: 40},
+      zoom: 3.5
+  });
+}
+});
+
 
 
     }) // end load
@@ -192,12 +161,13 @@ class Map extends Component {
 
   render() {
 
-    const { renderInfo, lng, lat, zoom, hoveredStateID } = this.state;
+    // const { renderInfo, lng, lat, zoom, hoveredStateID } = this.state;
     return (
       <div id="map">
-
         <div ref={el => this.mapContainer = el} />
+        {this.state.renderInfo}
       </div>
+        
     );
   }
 

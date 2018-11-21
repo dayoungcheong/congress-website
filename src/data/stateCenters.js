@@ -51,3 +51,5 @@ const stateCenters = {
     "Florida": [-82.4497, 28.6305],
     "Hawaii": [-156.3737, 20.2927],
 };
+
+export { stateCenters };
