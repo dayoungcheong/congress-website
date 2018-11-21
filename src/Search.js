@@ -68,7 +68,7 @@ export class Search extends Component {
         let repData = d3.nest()
         .key(function(d) { return d.name; })
         .entries(this.state.data);
-        console.log(repData)
+        // console.log(repData)
 
         return (
             <div className='body'>
