@@ -93,7 +93,11 @@ img:not(.nav-logo):not(.footer-logo) {
 
 
 
-.D {
+.card-item {
+    color: black;
+}
+
+/*.D {
     color: blue;
 }
 
