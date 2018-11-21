@@ -82,6 +82,10 @@ img:not(.nav-logo):not(.footer-logo) {
     text-align: center;
 }
 
+.card-item {
+    color: black;
+}
+
 
 
 

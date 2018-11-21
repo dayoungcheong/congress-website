@@ -12,11 +12,11 @@ export class Search extends Component {
             reps: false
         }
         this.change = this.change.bind(this);
-        this.submit = this.submit.bind(this);
+        // this.submit = this.submit.bind(this); UNCOMMENT THIS TO ADD THE SUBMIT BUTTON
       }
 
       filterData(currData, chosen) {
-          if (currData.stateName === chosen) {
+          if (currData.stateName == chosen) {
                 return true;
             }
       }
@@ -25,11 +25,11 @@ export class Search extends Component {
         this.setState({value: event.target.value});
       }
     
-      submit(event) {
-        this.setState({ value: '', reps: true });
-        // alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-      }
+    //   submit(event) { UNCOMMENT THIS TO ADD THE SUBMIT BUTTON
+    //     this.setState({ value: '', reps: true });
+    //     // alert('A name was submitted: ' + this.state.value);
+    //     event.preventDefault();
+    //   }
 
       componentDidMount() {
         // Load data
@@ -44,7 +44,6 @@ export class Search extends Component {
         let repData = d3.nest()
         .key(function(d) { return d.name; })
         .entries(this.state.data);
-        // console.log(repData)
 
         let dataToRender =  this.state.data.map(d => this.filterData(d, this.state.value) ?
         <div>
@@ -68,9 +67,9 @@ export class Search extends Component {
         </div> :
         "");
 
-        // function test() {
+        // function test() { THIS FUNCTION SHOULD WORK TO ADD THE TEST IF THE USER CLICKED THE SUBMIT BUTTON, BC REPS WILL BE TRUE AFTER THEY SUBMIT AND THIS MEANS TO RENDER THE REPS
         //     if (this.state.reps === true) {
-        //         this.state.data.map(d => this.filterData(d, this.state.value)  
+        //         return this.state.data.map(d => this.filterData(d, this.state.value) ?  
         //         <div>
         //         {  
         //             <Col key={'name'}>
@@ -92,6 +91,8 @@ export class Search extends Component {
         //         }
         //         </div> :
         //         "");
+        //     } else {
+        //         return "";
         //     }
         // }
 
@@ -115,8 +116,8 @@ export class Search extends Component {
 
             <main id="search-main">
                 <form onSubmit={this.submit} className='submit-button'>
-                    <input type="text" placeholder='State' className='state-placeholder' value={this.state.value} onChange={this.change} />
-                    <button type="submit" value="Submit" disabled={!this.state.value} onClick={this.submit} >Submit</button>
+                    <input type="text" alt='type in your state' placeholder='State' className='state-placeholder' value={this.state.value} onChange={this.change} />
+                    {/* <button type="submit" alt='click to submit' value="Submit" disabled={!this.state.value} onClick={this.submit} >Submit</button> UNCOMMENT THIS TO ADD THE SUBMIT BUTTON*/}
                 </form>
                 <br></br>
                 <h3>Search For Who Represents You In Congress</h3>
