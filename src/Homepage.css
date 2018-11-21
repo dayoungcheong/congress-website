@@ -82,7 +82,18 @@ img:not(.nav-logo):not(.footer-logo) {
     text-align: center;
 }
 
-/*.D {
+
+
+
+
+
+
+
+
+
+
+
+.D {
     color: blue;
 }
 
@@ -120,7 +131,7 @@ img:not(.nav-logo):not(.footer-logo) {
     width: 100%;
   }
 
-  #home-button {
+  /* #home-button {
     left: 10px;
     top: 10px;
   }
@@ -134,4 +145,4 @@ img:not(.nav-logo):not(.footer-logo) {
   button {
     border: 1px solid;
     box-shadow: 5px 10px #888888;
-  } */
+  }  */

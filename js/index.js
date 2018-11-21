@@ -22,9 +22,6 @@ function countryView() {
     appendInfo.appendChild(desc);
 }
 
-
-
-
 let mapcontainer = document.getElementById('mymap');
 
 
@@ -196,6 +193,7 @@ map.on('load', function () {
 
 function onMapClick(e) {
     let features = map.queryRenderedFeatures(e.point);
+    console.log(features);
     let arrOfStates = Object.values(stateFullName);
     if (arrOfStates.indexOf(features[0].properties.name) > -1) {
         currState = features[0].properties.name;
