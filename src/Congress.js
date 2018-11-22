@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 // import { Container, Row, Col } from 'reactstrap';
 import Map from './Map.js'
-import {legislators} from "./data/legislators"
 import './Homepage.css';
 
 export class Congress extends Component {
     render() {
-        {console.log(legislators)}
         return (
             <div className='body'>
 
@@ -28,7 +26,7 @@ export class Congress extends Component {
                 </header>
 
                 <main id="congress-page-main">
-                <div className="wrapper">
+                <div>
                 <Map />
                 </div>
                     {/* <i className="d-none fa fa-spinner fa-spin" aria-hidden="true" id="spinner"></i> 
