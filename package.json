@@ -1,6 +1,6 @@
 {
   "name": "congress-website",
-  "homepage": "http://dayoungcheong.github.io/congress-website",
+  "homepage": "https://info340d-au18.github.io/project-krystalXliang/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,8 @@
     "reactstrap": "^6.5.0"
   },
   "scripts": {
-    "deploy": "npm run build&&gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",   
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
