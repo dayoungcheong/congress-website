@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/congress-website/precache-manifest.11a376bbaf288585c02ec14410c1c1a1.js"
+  "/project-krystalXliang/precache-manifest.ff35c0201ebc105d043806db78a95842.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/congress-website/index.html", {
+workbox.routing.registerNavigationRoute("/project-krystalXliang/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
